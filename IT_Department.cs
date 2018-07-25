@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2
 {
+    //IT Department class having employee of IT departments inherits employee class
     class IT_Department:Employee
     {
         private string qualification; 
@@ -13,6 +14,7 @@ namespace Assignment2
         {
             qualification = qual;
         }
+        // Getter method to get Employee's Qualification!
         public string getQual()
         {
             return qualification;
