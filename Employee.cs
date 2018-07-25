@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2
 {
+    //Employee Class having all the member fields
     class Employee
     {
         private int empId;
@@ -17,14 +18,17 @@ namespace Assignment2
             empName = name;
             empDesignation = des;
         }
+        //Getter method to get Employee's ID
         public int getEmpId()
         {
             return empId;
         }
+        //Getter method to get Employee's Name
         public string getEmpName()
         {
             return empName;
         }
+        //Getter method to get Employee's Designation
         public string getEmpDesignation()
         {
             return empDesignation;
