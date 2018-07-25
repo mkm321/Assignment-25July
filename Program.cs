@@ -8,13 +8,16 @@ using System.Threading.Tasks;
 
 namespace Assignment2
 {
+    //Created to delegate print string
     public delegate void printString(string s);
     class Program
     {
+        //function that uses delegate
         static void printing(string s)
         {
             Console.WriteLine(s);
         }
+        // add Employee Details adding employee details in all the classes
         static void addEmployeeDetails()
         {
             int EmpID;
@@ -27,6 +30,7 @@ namespace Assignment2
             empDes = Console.ReadLine();
             Console.Write("Enter Employee Qualification :- ");
             empqual = Console.ReadLine();
+            //try catch block to catch the empty qualification exception
             try
             {
                 if (string.IsNullOrEmpty(empqual))
@@ -36,6 +40,7 @@ namespace Assignment2
                 }
                 else
                 {
+                    //To check which department employee is from!
                     if(empqual.Equals("BE") || empqual.Equals("BCA") || empqual.Equals("BSC"))
                     {
                         IT_Department itObj = new IT_Department(empqual, EmpID, empName, empDes);
@@ -66,6 +71,7 @@ namespace Assignment2
                 string filePath = @"B:\logs\logDetails.txt";
                 if (!File.Exists(filePath))
                 {
+                    //Adding message and stack trace to file system
                     using (StreamWriter streamWriter = File.AppendText(filePath))
                     {
                         streamWriter.WriteLine(message.Message);
@@ -75,14 +81,17 @@ namespace Assignment2
                 }
 
             }
+            // finally block executing just printing statment!
             finally
             {
                 Console.WriteLine();
                 Console.Write("Enter 1 to add Employee and 0 to exit :- ");
             }
         }
+        //main method
         static void Main(string[] args)
         {
+            // Asking user's choice to add employee or not!
             Console.Write("Enter 1 to add Employee and 0 to exit :- ");
             int choice = int.Parse(Console.ReadLine());
             while(choice == 1)
@@ -96,7 +105,7 @@ namespace Assignment2
             Console.ReadKey();
         }
     }
-
+    // added custom exception class!
     [Serializable]
     internal class QualificationException : Exception
     {
